@@ -21,6 +21,7 @@ namespace spect_an{
     std::vector<double> hamming_window(const std::vector<double>& input);
     std::vector<double> hann_window(const std::vector<double>& input);
     std::vector<double> kaiser_window(const std::vector<double>& input, const double beta = 8);
+    std::vector<double> blackman_window(const std::vector<double>& input);
 
     std::vector<double> get_frequency_bins(int fft_size, double sample_rate);
     std::vector<std::vector<double>> compute_spectrogram(const std::vector<double>& signal, int window_size, int hop_size);

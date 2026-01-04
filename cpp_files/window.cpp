@@ -33,4 +33,12 @@ namespace spect_an
         }
         return output;
     }
+
+    std::vector<double> blackman_window(const std::vector<double>& input){
+        if(input.size() < 2) return input;
+        const double two_pi_N = 2.0 * M_PI / (input.size() - 1);
+        std::vector<double> output(input);
+        for(size_t i{}; i < output.size(); i++) output[i] *= (0.42 - 0.5 * std::cos(two_pi_N * i) + 0.08 * std::cos(2 * two_pi_N * i));
+        return output;
+    }
 } // namespace spect_an

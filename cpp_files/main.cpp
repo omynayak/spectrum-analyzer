@@ -6,7 +6,7 @@ void writeFile(const std::vector<double>& data, std::string filename){
     filename = "./data/" + filename;
     std::ofstream file(filename);
     for(size_t i{}; i < data.size(); i++) {
-        file << i << " " << data[i] << "\n"; 
+        file << i << "," << data[i] << "\n"; 
     }
     file.close();
 }
@@ -15,7 +15,7 @@ void writeFile(const std::vector<double>& col1, const std::vector<double>& col2,
     filename = "./data/" + filename;
     std::ofstream file(filename);
     for(size_t i{}; i < col1.size(); i++) {
-        file << col1[i] << " " << col2[i] << "\n"; 
+        file << col1[i] << "," << col2[i] << "\n"; 
     }
     file.close();
 }
@@ -24,7 +24,7 @@ int main(void){
     double fs = 44100.0;
     auto signal = spect_an::sine(0, 440.0, fs);  
 
-    writeFile(signal, "sine.txt");
+    writeFile(signal, "sine.csv");
 
     signal = spect_an::kaiser_window(signal, 8);
 
@@ -39,7 +39,7 @@ int main(void){
 
     auto db_spectrum = spect_an::to_db(magnitude);
 
-    writeFile(freqs, db_spectrum, "demo.txt"); 
+    writeFile(freqs, db_spectrum, "demo.csv"); 
 
     auto peaks = spect_an::find_peaks(db_spectrum, freqs);
     
