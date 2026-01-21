@@ -1,4 +1,4 @@
-#include "../headers/spectrum_analyzer.h"
+#include "../headers/spectrum_analyzer.hpp"
 
 namespace spect_an
 {
