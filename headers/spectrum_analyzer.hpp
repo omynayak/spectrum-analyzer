@@ -4,6 +4,8 @@
 #include <complex>
 #include <vector>
 #include <cmath>
+#include "nd_rng.hpp"
+#include "xorshift.hpp"
 
 #define SIGNAL_SIZE 1024
 namespace spect_an{

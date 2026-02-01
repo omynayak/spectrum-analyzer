@@ -7,5 +7,13 @@ SRC = ./cpp_files/main.cpp ./cpp_files/signals.cpp ./cpp_files/fft.cpp ./cpp_fil
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
 
+
+run: $(TARGET)
+	./$(TARGET)
+	python3 ./plotting/plot_gaussian.py
+	python3 ./plotting/plot_psd_gaussian.py
+	python3 ./plotting/plot_uniform.py
+	python3 ./plotting/plot_psd_uniform.py
+
 clean:
 	rm -f $(TARGET)

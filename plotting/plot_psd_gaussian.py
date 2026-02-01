@@ -25,7 +25,7 @@ for fname in window_files:
     psd = data[:, 1]
     plt.plot(freq, psd, label=fname.replace("_psd.csv", ""))
 
-plt.title("PSD Comparison: Rect / Hann / Hamming / Blackman")
+plt.title("PSD Comparison (220, 440, 1590 Hz): Rect / Hann / Hamming / Blackman (Gaussian Noise)")
 plt.xlabel("Frequency")
 plt.ylabel("PSD")
 plt.ylim(-120, 120)
@@ -42,7 +42,7 @@ for fname in kaiser_files:
     psd = data[:, 1]
     plt.plot(freq, psd, label=fname.replace("_psd.csv", ""))
 
-plt.title("PSD Comparison: Kaiser Windows (β1 to β8)")
+plt.title("PSD Comparison (220, 440, 1590 Hz): Kaiser Windows (β1 to β8) (Gaussian Noise)")
 plt.xlabel("Frequency")
 plt.ylabel("PSD")
 plt.xlim(0,2000)
